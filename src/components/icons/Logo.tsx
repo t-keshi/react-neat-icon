@@ -8,6 +8,7 @@ const SvgLogo = (props: SVGProps<SVGSVGElement>) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
+    role="img"
     {...props}
   >
     <path fill="url(#logo_svg__a)" d="M0 0h283.974v50H0z" />

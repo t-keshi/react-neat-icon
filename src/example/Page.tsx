@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box, Flex, Message, Stack, SvgIcon, Typography } from '../components';
+import { Box, Flex, Stack, SvgIcon, Typography } from '../components';
 import { Layout } from './parts/Layout';
-import { AttachmentPin, GripVertical, Stamp } from '../components/icons';
+import { AttachmentPin } from '../components/icons';
 import { css } from '@emotion/css';
 import { MdOutlineAttachFile } from 'react-icons/md';
 
@@ -16,15 +16,6 @@ export const Page: React.FC = () => {
     <Layout>
       <Flex mt={3}>
         <Box flexBasis="50%">
-          <Typography variant="h4" className={textWithIcon}>
-            <SvgIcon Icon={GripVertical} color="inherit" />
-            自前のアイコン
-          </Typography>
-          <SvgIcon Icon={Stamp} color="error" />
-          <GripVertical />
-
-          <SvgIcon Icon={AttachmentPin} fontSize="sm" color="action" />
-          <SvgIcon Icon={AttachmentPin} fontSize="sm" color="action" />
           <Typography variant="h4" className={textWithIcon}>
             <SvgIcon Icon={AttachmentPin} color="inherit" />
             自前のアイコン

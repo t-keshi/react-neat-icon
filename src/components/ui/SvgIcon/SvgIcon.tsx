@@ -32,7 +32,8 @@ const styledIcon = ({
 }) =>
   css({
     userSelect: 'none',
-
+    width: '1em',
+    height: '1em',
     display: 'inline-block',
     fill: 'currentColor',
     flexShrink: 0,
@@ -69,7 +70,6 @@ export const SvgIcon = React.forwardRef<SVGSVGElement, Props>((props, ref) => {
       focusable={false}
       color={themeColor}
       fontSize={fontSize}
-      viewBox="0 0 24 24"
       {...rest}
       ref={ref}
     />

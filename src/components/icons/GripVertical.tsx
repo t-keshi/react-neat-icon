@@ -2,7 +2,14 @@ import * as React from 'react';
 import { SVGProps } from 'react';
 
 const SvgGripVertical = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={15} height={15} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={15}
+    height={15}
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    {...props}
+  >
     <g clipPath="url(#grip-vertical_svg__a)">
       <path
         fillRule="evenodd"

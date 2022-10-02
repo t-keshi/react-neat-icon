@@ -3,7 +3,6 @@ export { Divider } from './ui/Divider/Divider';
 export { Flex } from './ui/Flex/Flex';
 export { Header } from './ui/Header/Header';
 export { IconButton } from './ui/IconButton/IconButton';
-export { Message } from './ui/Message/Message';
 export { SvgIcon } from './ui/SvgIcon/SvgIcon';
 export { Typography } from './ui/Typography/Typography';
 export { Unstable_Grid as Grid } from '@mui/system';

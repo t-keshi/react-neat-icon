@@ -10,6 +10,8 @@ const SvgAttachmentPin = (props: SVGProps<SVGSVGElement>) => (
     fillRule="evenodd"
     clipRule="evenodd"
     viewBox="0 0 397 511.92"
+    role="img"
+    fill="black"
     {...props}
   >
     <path

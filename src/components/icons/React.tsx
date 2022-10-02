@@ -9,6 +9,7 @@ const SvgReact = (props: SVGProps<SVGSVGElement>) => (
     width={35.93}
     height={32}
     viewBox="0 0 256 228"
+    role="img"
     {...props}
   >
     <path

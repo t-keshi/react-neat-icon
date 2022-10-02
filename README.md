@@ -27,7 +27,7 @@ git@github.com:t-keshi/react-neat-icon.git
 ② インストール
 
 ```
-npm install
+yarn
 ```
 
 ③ `ReactComponent`に変換したい`svg`ファイルを`src/assets`に入れる
@@ -35,7 +35,7 @@ npm install
 ④ icon に変換する
 
 ```
-npm run icons
+yarn run icons
 ```
 
 ⑤ 完成！
