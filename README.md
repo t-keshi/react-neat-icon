@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://main--6327e299b25d28bf5e435580.chromatic.com/?path=/story/introduction-welcome--page">
-    <img src="https://img.shields.io/github/stars/t-keshi/romantic-ui?style=social" alt="Stars" />
+    <img src="https://img.shields.io/github/stars/t-keshi/react-neat-icon?style=social" alt="Stars" />
   </a>
 </p>
 
