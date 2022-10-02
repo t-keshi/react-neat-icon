@@ -16,6 +16,7 @@ type StyleProps = {
     | 'info'
     | 'success';
   variant?: keyof Theme['typography'];
+  disableGutter?: boolean;
 };
 
 type BaseProps = {
@@ -35,7 +36,7 @@ const typogrqphyClasses = {
 
 const StyledTypography = styled('p', {
   shouldForwardProp: (prop) => isPropValid(prop),
-})<Required<StyleProps>>(({ theme, variant, color }) => {
+})<Required<StyleProps>>(({ theme, variant, color, disableGutter }) => {
   const themeColor = {
     inherit: undefined,
     textPrimary: theme.palette.text.primary,
@@ -53,6 +54,7 @@ const StyledTypography = styled('p', {
     margin: 0,
     color: themeColor,
     ...theme.typography[variant],
+    ...(!disableGutter && { marginBottom: theme.spacing(2) }),
   };
 });
 
@@ -67,6 +69,7 @@ const renderFunction = <TElementType extends React.ElementType = 'p'>(
     as = 'p',
     variant = 'body1',
     color = 'textPrimary',
+    disableGutter = false,
     ...rest
   } = props;
   const TypographyElement = StyledTypography.withComponent(as);
@@ -76,6 +79,7 @@ const renderFunction = <TElementType extends React.ElementType = 'p'>(
       ref={ref}
       variant={variant}
       color={color}
+      disableGutter={disableGutter}
       {...rest}
     >
       {children}

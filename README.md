@@ -1,10 +1,10 @@
 <p align="center">
   <a href="https://main--6327e299b25d28bf5e435580.chromatic.com/?path=/story/introduction-welcome--page">
-    <img src="./src/assets/logo.svg" alt="RomanticUI" width="400" />
+    <img src="./src/assets/logo.svg" alt="React Neat Icon" width="400" />
   </a>
 </p>
 
-<p align="center">Better Semantci UI for React</p>
+<p align="center">React Neat Icon</p>
 
 <br/>
 
@@ -16,30 +16,28 @@
 
 <br/>
 
-# RomanticUI
+## 使い方
 
-`RomanticUI`は`SemanticUI`の代替 UI ライブラリとして設計されました。<br/>
-この代替案は`SemanticUI`と比較して、`React`との相性が良く、スピーディーに`Components`を組み立ててアプリケーションを開発することを可能とします。<br/>
+① リポジトリをクローン
 
-次のことを意識して作られています。<br/>
-1️⃣ より少ないコードで書けるように<br/>
-2️⃣ 様々なユースケースに対応できるように<br/>
-3️⃣ シンプルでメンテナンスが容易になるように<br/>
+```
+git@github.com:t-keshi/react-neat-icon.git
+```
 
-toB の Web アプリケーションの開発に使うことを念頭に置いて開発されています。<br/>
-そのため装飾は極力控えめになっており、また、業務系アプリケーションで使う頻度の低いコンポーネントは提供していません。
+② インストール
 
-## 技術スタック
+```
+npm install
+```
 
-この UI ライブラリは、`emotion`を基盤としてに作られています。<br/>
-そのため、クラス名の衝突やスペルミスに気を使うことなく、デザインを自由に変えることができます。<br/>
-スタイリングの方法については、[emotion](https://emotion.sh/docs/introduction)をご覧ください。<br/>
+③ `ReactComponent`に変換したい`svg`ファイルを`src/assets`に入れる
 
-また、ロジック部分については、`mui/base`を採用しています。<br/>
-`mui/base`は`Material UI(Mui)`から、見た目部分を削ぎ落としたヘッドレスな UI ライブラリです。<br/>
-実装について詳しく知りたい方は、[mui/base](https://mui.com/base/getting-started/overview)をご覧ください。<br/>
+④ icon に変換する
 
-## お願い
+```
+npm run icons
+```
 
-📥 プルリクエストと 🌟 スターはいつでも大歓迎です。<br/>
-作られたばかりのライブラリなので、皆さんのお力を借りられますと幸いです。<br/>
+⑤ 完成！
+
+`src/components/icons`に変換された`Svg`が入っています

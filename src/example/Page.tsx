@@ -1,108 +1,60 @@
 import React from 'react';
-import {
-  Box,
-  Button,
-  Dialog,
-  Flex,
-  Message,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Typography,
-} from '../components';
-import { css } from '@emotion/css';
+import { Box, Flex, Message, Stack, SvgIcon, Typography } from '../components';
 import { Layout } from './parts/Layout';
-import { MdAdd, MdDownload } from 'react-icons/md';
-import { rows } from '../misc/dummyData';
-import { AddDialog } from './parts/AddDialog';
-import { useAnchorEl } from '../util/useAnchorEl';
+import { AttachmentPin, GripVertical, Stamp } from '../components/icons';
+import { css } from '@emotion/css';
+import { MdOutlineAttachFile } from 'react-icons/md';
 
-const logo = css`
-  width: 200px;
-  height: auto;
-`;
-
-const link = css`
-  text-decoration: underline;
-  text-underline-offset: 4px;
-`;
-
-const tableContainer = css`
-  margin-top: 24px;
+const textWithIcon = css`
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
 `;
 
 export const Page: React.FC = () => {
-  const { anchorEl, onOpen, onClose } = useAnchorEl();
-
   return (
     <Layout>
-      <Flex>
-        <Box width={'50%'}>
-          <Message
-            color="primary"
-            header="テスト"
-            content={
-              <>
-                このページは、
-                <Typography
-                  className={link}
-                  as={'a'}
-                  href={'https://github.com/t-keshi/romantic-ui'}
-                >
-                  RomanticUI
-                </Typography>
-                を使ったアプリケーション開発のデモ画面です。
-              </>
-            }
-          />
+      <Flex mt={3}>
+        <Box flexBasis="50%">
+          <Typography variant="h4" className={textWithIcon}>
+            <SvgIcon Icon={GripVertical} color="inherit" />
+            自前のアイコン
+          </Typography>
+          <SvgIcon Icon={Stamp} color="error" />
+          <GripVertical />
+
+          <SvgIcon Icon={AttachmentPin} fontSize="sm" color="action" />
+          <SvgIcon Icon={AttachmentPin} fontSize="sm" color="action" />
+          <Typography variant="h4" className={textWithIcon}>
+            <SvgIcon Icon={AttachmentPin} color="inherit" />
+            自前のアイコン
+          </Typography>
+          <Stack spacing={2}>
+            <SvgIcon Icon={AttachmentPin} fontSize="sm" color="action" />
+            <SvgIcon Icon={AttachmentPin} fontSize="sm" color="disabled" />
+            <SvgIcon Icon={AttachmentPin} fontSize="md" color="primary" />
+            <SvgIcon Icon={AttachmentPin} fontSize="md" color="secondary" />
+            <SvgIcon Icon={AttachmentPin} fontSize="lg" color="error" />
+            <SvgIcon Icon={AttachmentPin} fontSize="lg" color="info" />
+            <SvgIcon Icon={AttachmentPin} fontSize="lg" color="success" />
+          </Stack>
         </Box>
-        <Flex width={'50%'} alignItems="end" justifyContent="flex-end" gap={2}>
-          <Button variant="outlined" startIcon={<MdDownload />}>
-            ダウンロード
-          </Button>
-          <Button startIcon={<MdAdd />} onClick={onOpen}>
-            品目の追加
-          </Button>
-          <AddDialog open={Boolean(anchorEl)} onClose={onClose} />
-        </Flex>
+        <Box flexBasis="50%">
+          <Typography variant="h4" className={textWithIcon}>
+            <SvgIcon Icon={MdOutlineAttachFile} color="inherit" />
+            react-icons
+          </Typography>
+          <Stack spacing={2}>
+            <SvgIcon Icon={MdOutlineAttachFile} fontSize="sm" color="action" />
+            <SvgIcon Icon={MdOutlineAttachFile} fontSize="sm" color="disabled" />
+            <SvgIcon Icon={MdOutlineAttachFile} fontSize="md" color="primary" />
+            <SvgIcon Icon={MdOutlineAttachFile} fontSize="md" color="secondary" />
+            <SvgIcon Icon={MdOutlineAttachFile} fontSize="lg" color="error" />
+            <SvgIcon Icon={MdOutlineAttachFile} fontSize="lg" color="info" />
+            <SvgIcon Icon={MdOutlineAttachFile} fontSize="lg" color="success" />
+          </Stack>
+        </Box>
       </Flex>
-      <TableContainer className={tableContainer}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell variant="head" sticky sortable>
-                品目
-              </TableCell>
-              <TableCell variant="head" sticky sortable>
-                カロリー
-              </TableCell>
-              <TableCell variant="head" sticky sortable>
-                炭水化物
-              </TableCell>
-              <TableCell variant="head" sticky sortable>
-                脂質
-              </TableCell>
-              <TableCell variant="head" sticky>
-                タンパク質
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow key={row.id}>
-                <TableCell>{row.name}</TableCell>
-                <TableCell>{row.calories}</TableCell>
-                <TableCell>{row.carbs}</TableCell>
-                <TableCell>{row.fat}</TableCell>
-                <TableCell>{row.protein}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
     </Layout>
   );
 };
